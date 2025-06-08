@@ -102,3 +102,67 @@ These exercises reinforce how OOP principles translate to practical Java code, b
 ## Further Reading
 - Oracle Java Tutorials on OOP: [https://docs.oracle.com/javase/tutorial/java/concepts/](https://docs.oracle.com/javase/tutorial/java/concepts/)
 - Java Documentation on Interfaces and Inheritance: [https://docs.oracle.com/javase/specs/](https://docs.oracle.com/javase/specs/)
+
+
+## Collections Exercises in This Repository
+
+This section summarizes the practical exercises implemented to reinforce core concepts of the Java Collections Framework. Each exercise focuses on a specific collection type, demonstrating key operations and behaviors through hands-on coding. The source code for these exercises is located in `src/main/java/collections/`.
+
+### 1. List with ArrayList: Ordered Collection with Duplicates
+- **File**: `ListExample.java` [Link](../src/main/java/collections/ListExample.java)
+- **Objective**: Learn ordered collections that allow duplicates using `ArrayList`.
+- **Implementation**:
+  - Created an `ArrayList` to store names of 5 friends as `String` objects using generics (`List<String>`).
+  - Added names, removed one by index and value, and replaced another using `set()`.
+  - Iterated over the list using `for-each`, `Iterator` (`ListIterator`), and other methods (e.g., indexed `for`, `while`, lambda, streams).
+- **Key Takeaways**:
+  - `ArrayList` maintains insertion order and allows duplicate elements.
+  - Multiple iteration methods are available; `for-each` is the most idiomatic for simple traversal.
+  - Operations like `remove()` and `set()` require index bounds awareness to avoid exceptions.
+- **Observations**:
+  - Experimenting with various iteration techniques highlighted Java's flexibility, though focusing on basics (`for-each`, `Iterator`) is key for clarity.
+  - Printing intermediate states helped visualize list changes after each operation.
+
+### 2. Set with HashSet: Unordered Collection with Uniqueness
+- **File**: `SetExample.java` [Link](../src/main/java/collections/SetExample.java)
+- **Objective**: Learn unordered collections that ensure uniqueness using `HashSet`.
+- **Implementation**:
+  - Created a `HashSet` to store 10 random integers using generics (`Set<Integer>`).
+  - Added numbers with `Random` (range 1-50) and explicitly added a duplicate value (69) to demonstrate uniqueness.
+  - Printed the set multiple times to observe duplicates removed and lack of order.
+  - Used `contains()` to check for a number before and after adding it.
+- **Key Takeaways**:
+  - `HashSet` automatically removes duplicates; attempting to add the same value (e.g., 69 twice) has no effect.
+  - Elements are unordered due to hashing; insertion order is not preserved.
+  - `contains()` provides fast lookups to verify element existence.
+- **Observations**:
+  - Random generation with a large range didn’t always produce duplicates naturally; explicit duplicates were necessary to show behavior.
+  - Output messages confirmed that duplicates don’t appear in the set printout.
+
+### 3. Map with HashMap: Key-Value Pairs with Unique Keys
+- **File**: `MapExample.java` [Link](../src/main/java/collections/MapExample.java)
+- **Objective**: Learn key-value storage and retrieval using `HashMap`.
+- **Implementation**:
+  - Created a `HashMap` to store student names (`String`) and scores (`Integer`) using generics.
+  - Added 5 student-score pairs, including a duplicate key ("George") to show overwriting behavior.
+  - Printed the map to observe key-value pairs and overwrite effect.
+  - Retrieved scores with `get()` for an existing key and used `containsKey()` for a non-existing key.
+  - Iterated over the map using `keySet()` to display all pairs, and demonstrated `remove()`.
+- **Key Takeaways**:
+  - `HashMap` stores unique keys; adding a duplicate key overwrites the old value (e.g., "George"’s score changed from 100 to 1000).
+  - `get()` retrieves values efficiently by key; non-existing keys return `null` (though not fully tested in output).
+  - Iteration via `keySet()` allows access to keys and values, though other methods like `entrySet()` exist for direct pair access.
+- **Observations**:
+  - Overwrite behavior for duplicate keys was visible in map output, reinforcing uniqueness of keys unlike `List` or `Set` elements.
+  - Additional operations like `remove()` showed flexibility in managing key-value data.
+
+### Summary of Collections Learning
+- **List (ArrayList)**: Best for ordered data with possible duplicates; supports indexed access and multiple iteration methods.
+- **Set (HashSet)**: Ideal for unique data where order doesn’t matter; automatically handles duplicates.
+- **Map (HashMap)**: Suited for associating data via unique keys; enables fast lookups but overwrites duplicates.
+- These exercises demonstrated practical differences between collection types, building a foundation for choosing the right structure based on use case (e.g., ordered list of items, unique set of IDs, or key-value lookups).
+
+### Future Exploration
+- Experiment with other implementations (e.g., `LinkedList` for `List`, `TreeSet` for sorted `Set`, `TreeMap` for sorted `Map`).
+- Explore advanced operations (e.g., `List` sorting with `Collections.sort()`, bulk operations in `Set`, or handling `null` in `Map`).
+- Add error handling for edge cases (e.g., index bounds in `List`, non-existing keys in `Map` returning `null`).
