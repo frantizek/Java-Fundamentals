@@ -2,8 +2,6 @@
  * Task: Create an ArrayList to store names of 5 friends (as String objects). 
  * Use generics for type safety.
  */
-
-package main.java.collections;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
@@ -11,6 +9,7 @@ import java.util.ListIterator;
 public class ListExample {
 
     public static void main(String[] args) {
+        System.out.println("List examples:");
 
         List<String> friendList = new ArrayList <String>();
 
