@@ -166,3 +166,32 @@ This section summarizes the practical exercises implemented to reinforce core co
 - Experiment with other implementations (e.g., `LinkedList` for `List`, `TreeSet` for sorted `Set`, `TreeMap` for sorted `Map`).
 - Explore advanced operations (e.g., `List` sorting with `Collections.sort()`, bulk operations in `Set`, or handling `null` in `Map`).
 - Add error handling for edge cases (e.g., index bounds in `List`, non-existing keys in `Map` returning `null`).
+
+## Multithreading Theory in Java
+
+### What Is Multithreading?
+Multithreading in Java allows concurrent execution of multiple threads (parts of a program) to improve CPU utilization and responsiveness. Each thread runs independently, often in parallel.
+
+### Core Concepts
+- **Thread Creation**: Extend `Thread` class or implement `Runnable` interface; start with `start()` (not `run()` directly).
+- **Thread Lifecycle**: States include New, Runnable, Running, Blocked/Waiting, Terminated; managed by JVM scheduler.
+- **Concurrency Issues**: Race conditions (shared data conflicts), deadlocks (threads waiting indefinitely).
+- **Synchronization**: Use `synchronized` keyword to protect shared resources, ensuring thread safety.
+- **Performance**: Improves efficiency but adds complexity (e.g., debugging, overhead from too many threads).
+
+### Why Use Multithreading?
+- Efficiency in CPU usage with parallel tasks.
+- Responsiveness in applications (e.g., UI updates while processing data).
+- Scalability for handling multiple operations (e.g., server requests).
+
+### Common Pitfalls
+- Race conditions from unprotected shared data.
+- Calling `run()` instead of `start()`, missing concurrency.
+- Deadlocks from poor resource locking design.
+
+### Planned Exercises in This Repository
+- **Basic Thread Creation**: Create two threads to print numbers and letters, observing concurrent execution (`BasicThreads.java`).
+- **Thread Synchronization**: Use two threads to increment a shared counter, applying synchronization to avoid race conditions (`SynchronizedCounter.java`).
+
+### Further Reading
+- Oracle Java Tutorials on Concurrency: [https://docs.oracle.com/javase/tutorial/essential/concurrency/](https://docs.oracle.com/javase/tutorial/essential/concurrency/)
