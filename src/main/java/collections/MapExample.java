@@ -1,3 +1,4 @@
+package collections;
 /* 
  * 
  * Task: Create a HashMap to store names of students 

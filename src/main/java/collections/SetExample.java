@@ -1,4 +1,4 @@
-
+package collections;
 /* 
  * Task: Create a HashSet to store 10 random integers, including some duplicates.
  * Steps:
@@ -61,3 +61,4 @@ public class SetExample{
     }
 
  }
+ 

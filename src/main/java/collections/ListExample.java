@@ -1,3 +1,4 @@
+package collections;
 /* 
  * Task: Create an ArrayList to store names of 5 friends (as String objects). 
  * Use generics for type safety.
